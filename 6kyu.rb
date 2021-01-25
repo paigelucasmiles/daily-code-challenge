@@ -13,5 +13,38 @@
 # For 4 or more names, the number in and 2 others simply increases.
 
 def likes(names)
-    
+    if names.length == 0
+        return 'no one likes this'
+    end
+    if names.length == 1
+        return "#{names[0]} likes this"
+    end
+    if names.length == 2
+        return "#{names[0]} and #{names[1]} like this"
+    end
+    if names.length == 3
+        return "#{names[0]}, #{names[1]} and #{names[2]} like this"
+    end
+    if names.length > 3
+        return "#{names[0]}, #{names[1]} and #{names.length - 2} others like this"
+    end
+end
+
+likes([])
+
+# alternative solution: case statement
+
+def likes(names)
+    case names.size
+    when 0 
+        "no one likes this"
+    when 1 
+        "#{names[0]} likes this"
+    when 2
+        "#{names[0]} and #{names[1]} like this"
+    when 3
+        "#{names[0]}, #{names[1]} and #{names[2]} like this"
+    else
+        "#{names[0]}, #{names[1]} and #{names.size - 2} others like this"
+    end
 end
