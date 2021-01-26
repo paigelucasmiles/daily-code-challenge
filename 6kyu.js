@@ -46,22 +46,11 @@ function solution(number){
 // }
 
 function duplicateCount(text){
-    const repeatedCharacters = [];
     const textArray = text.toLowerCase().split("").sort().join("").match(/(.)\1+/g);
-
-    if (textArray != null) {
-        textArray.forEach((element) => {
-        repeatedCharacters.push(element[0]);
-        });
-        for (i = 0; i < textArray.length; i++) {
-            console.log(textArray[i])
-        }
-    } else {
-        console.log('no characters repeat more than once')
-    }
+    console.log(textArray.length)
 }
 
-const text = 'indivisibility'
+const text = 'aabb'
 
 duplicateCount(text)
 
