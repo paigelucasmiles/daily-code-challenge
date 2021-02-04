@@ -13,6 +13,12 @@
 // 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
 
 function digital_root(n) {
-    
+    let sum = 0;
+
+    String(n).split('').map(number => sum += +number)
+
+    return sum >= 10 ? digital_root(sum) : sum
 }
 
+const number = 493193
+digital_root(number)
