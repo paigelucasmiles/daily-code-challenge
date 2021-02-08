@@ -53,3 +53,33 @@ function persistence(num) {
 // C          100
 // D          500
 // M          1,000
+
+function solution(roman){
+    const decode = {"M":1000, "D":500, "C":100, "L":50, "X":10, "V":5, "I":1}
+    const romanArray = roman.split('')
+
+    let total = 0 ;
+    let currentRomanNumeral;
+    let currentConvertedValue;
+    let nextRomanNumeral;
+    let nextConvertedValue;
+
+    for (let i = 0; i < romanArray.length; i++) {
+        currentRomanNumeral = romanArray[i];
+        currentConvertedValue = decode[currentRomanNumeral];
+
+        nextRomanNumeral = romanArray[i+1];
+        nextConvertedValue = decode[nextRomanNumeral];
+
+        if (currentConvertedValue < nextConvertedValue) {
+            total -= (currentConvertedValue);
+        } else {
+            total += (currentConvertedValue);
+        }
+    }
+    console.log(total)
+}
+
+const roman = "MDCLXVI"
+
+solution(roman)
