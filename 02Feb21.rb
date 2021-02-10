@@ -14,4 +14,4 @@ def descending_order(n)
     print n.to_s.split("").sort { |a, b| b <=> a }.join.to_i
 end
 
-descending_order(987654321)
+# descending_order(987654321)
