@@ -49,4 +49,33 @@ const url4 = "2wwfvs07z5elmsa.us"
 const url5 = "https://www.roe6dx5txrz61.fr/index.php"
 const url6 = "https://foq0za.co.za/warez/"
 
-domainName(url6)
+// domainName(url6)
+
+// 6kyu: Complete Fibonacci Series
+// The function 'fibonacci' should return an array of fibonacci numbers. 
+// The function takes a number as an argument to decide how many no. of elements to produce. 
+// If the argument is less than or equal to 0 then return empty array.
+
+// Example:
+// fibonacci(4) // should return  [0,1,1,2]
+// fibonacci(-1) // should return []
+
+function fibonacci(n) {
+    let array
+    if (n <= 0) {
+        array = [];
+    } else if (n === 1) {
+        array = [0];
+    } else if (n === 2) {
+        array = [0, 1];
+    } else {
+        array = [0, 1];
+        while (n > array.length) {
+            array.push(array[array.length - 1] + array[array.length - 2]);
+        }
+    }
+    console.log(array)
+}
+
+fibonacci(6)
+
