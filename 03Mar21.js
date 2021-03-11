@@ -166,6 +166,32 @@ var moveZeros = function (arr) {
 // On each line of the report you have to add the new balance and then in the last two lines the total expense and the average expense. 
 // So as not to have a too long result string we don't ask for a properly formatted result.
 
+function balance(book) {
+  // your code
+  // Please use .toFixed(2) to format numbers
+    const bookArray = book.split("\n")
+    const regexDigitCharacters = /\d+/
+    const balancedBookArray = []
+
+    const originalBalanceAmount = parseInt(bookArray[0].match(regexDigitCharacters)[0]).toFixed(2).toString()
+    balancedBookArray.push(`Original Balance: ${originalBalanceAmount}`)
+
+    console.log(bookArray[0].match(regexDigitCharacters))
+}
+
+var b1 = `1000.00!=
+
+125 Market !=:125.45
+126 Hardware =34.95
+127 Video! 7.45
+128 Book :14.32
+129 Gasoline ::16.10
+`
+
+// balance(b1)
+
+
+
 
 
 
@@ -185,7 +211,7 @@ multiplicationTable = function(size) {
     for(let i = 1; i <= size; i++){
         arr.push(increaseNums(i, size));
     }
-    console.log(arr);
+    return arr;
 }
 
 function increaseNums(numToIncrease, numSize){
@@ -196,7 +222,65 @@ function increaseNums(numToIncrease, numSize){
         increasedNumsArr.push(sum)
     }
 
-    console.log(increasedNumsArr);
+    return increasedNumsArr;
 }
 
-multiplicationTable(3)
+// multiplicationTable(3)
+
+
+
+
+
+// 6kyu: If you can read this...
+// You'll have to translate a string to Pilot's alphabet (NATO phonetic alphabet).
+
+// Input:
+// If, you can read?
+
+// Output:
+// India Foxtrot , Yankee Oscar Uniform Charlie Alfa November Romeo Echo Alfa Delta ?
+
+// Note:
+// The set of used punctuation is .!?.
+// Punctuation should be kept in your return string, but spaces should not.
+// Xray should not have a dash within.
+// Every word and punctuation mark should be seperated by a space ' '.
+// There should be no trailing whitespace
+
+
+function to_nato(words) {
+let table = {
+  'A': 'Alfa',
+  'B': 'Bravo',
+  'C': 'Charlie',
+  'D': 'Delta',
+  'E': 'Echo',
+  'F': 'Foxtrot',
+  'G': 'Golf',
+  'H': 'Hotel',
+  'I': 'India',
+  'J': 'Juliett',
+  'K': 'Kilo',
+  'L': 'Lima',
+  'M': 'Mike',
+  'N': 'November',
+  'O': 'Oscar',
+  'P': 'Papa',
+  'Q': 'Quebec',
+  'R': 'Romeo',
+  'S': 'Sierra',
+  'T': 'Tango',
+  'U': 'Uniform',
+  'V': 'Victor',
+  'W': 'Whiskey',
+  'X': 'Xray',
+  'Y': 'Yankee',
+  'Z': 'Zulu',
+}
+
+function to_nato(words) {
+  return words.split('').filter(c => c !== ' ').map(c => table[c.toUpperCase()] || c).join(' ');
+}
+}
+
+to_nato('If, you can read?')
