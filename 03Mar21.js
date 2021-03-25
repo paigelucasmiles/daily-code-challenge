@@ -303,3 +303,15 @@ to_nato('If, you can read?')
 
 // Constraints:
 // The given address is a valid IPv4 address.
+
+var defangIPaddr = function(address) {
+    let addressArray = address.split("")
+    for(let i = 0; i < addressArray.length; i++) {
+        if(addressArray[i] === '.') {
+            addressArray[i] = '[.]'
+        }
+    }
+    console.log(addressArray.join(''))
+};
+
+defangIPaddr('1.1.1.1')
