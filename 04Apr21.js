@@ -126,3 +126,12 @@ var decode = function(encoded, first) {
 // nums.length == index.length
 // 0 <= nums[i] <= 100
 // 0 <= index[i] <= i
+
+var createTargetArray = function(nums, index) {
+    let targetArray = [];
+    
+    for(let i = 0; i < index.length; i++) {
+        targetArray.splice(index[i], 0, nums[i])
+    }
+    return targetArray;
+};
