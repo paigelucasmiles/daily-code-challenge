@@ -168,3 +168,11 @@ var createTargetArray = function(nums, index) {
 // 0 <= big, medium, small <= 1000
 // carType is 1, 2, or 3
 // At most 1000 calls will be made to addCar
+
+var ParkingSystem = function(big, medium, small) {
+    this.count = [big, medium, small]
+};
+
+ParkingSystem.prototype.addCar = function(carType) {
+    return this.count[carType] ? this.count[carType]-- : 0
+};
