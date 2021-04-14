@@ -261,3 +261,14 @@ var balancedStringSplit = function(s) {
 // 0 <= start <= 1000
 // n == nums.length
 
+var xorOperation = function(n, start) {
+    let nums = [];
+    let result = 0;
+    
+    for(let i = 0; i < n; i++) {
+        nums[i] = start + 2*i
+        result = result ^ nums[i]
+    }
+    
+    return result
+};
