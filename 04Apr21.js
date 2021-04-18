@@ -294,3 +294,19 @@ var xorOperation = function(n, start) {
 // Input: items = [["phone","blue","pixel"],["computer","silver","phone"],["phone","gold","iphone"]], ruleKey = "type", ruleValue = "phone"
 // Output: 2
 // Explanation: There are only two items matching the given rule, which are ["phone","blue","pixel"] and ["phone","gold","iphone"]. Note that the item ["computer","silver","phone"] does not match.
+
+var countMatches = function(items, ruleKey, ruleValue) {
+    let count = 0
+    const rule = {
+        "type": 0,
+        "color": 1,
+        "name": 2
+    }
+    
+    for(let i = 0; i < items.length; i++) {
+        if(items[i][rule[ruleKey]] === ruleValue) {
+            count++
+        }
+    }
+    return count
+};
