@@ -341,3 +341,12 @@ var countMatches = function(items, ruleKey, ruleValue) {
 // 1 <= nums.length <= 1000
 // -100 <= nums[i] <= 100
 
+var arraySign = function(nums) {
+    const product = nums.reduce((acc, current) => acc * current)
+    
+    if(product) {
+        return product > 0 ? 1 : -1
+    } else {
+        return 0
+    }
+};
