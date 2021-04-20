@@ -369,3 +369,12 @@ var arraySign = function (nums) {
 // Constraints:
 // 1 <= sentence.length <= 1000
 // sentence consists of lowercase English letters.
+
+var checkIfPangram = function(sentence) {
+    let sentenceSet = new Set([...sentence])
+    if(sentenceSet.size === 26){
+        return true
+    } else {
+        return false
+    }
+};
