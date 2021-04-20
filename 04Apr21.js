@@ -28,18 +28,18 @@
 // 1 <= command.length <= 100
 // command consists of "G", "()", and/or "(al)" in some order.
 
-var interpret = function(command) {
+var interpret = function (command) {
     let string = ''
     let i = 0;
-    
-    while(i < command.length) {
-        if(command[i] === "G") {
+
+    while (i < command.length) {
+        if (command[i] === "G") {
             string = string + "G";
             i++
-        } else if(command[i] === "(" && command[i + 1] === ")") {
+        } else if (command[i] === "(" && command[i + 1] === ")") {
             string = string + "o"
             i = i + 2
-        } else if(command[i] === "(" && command[i + 1] === "a") {
+        } else if (command[i] === "(" && command[i + 1] === "a") {
             string = string + "al"
             i = i + 4
         }
@@ -71,11 +71,11 @@ var interpret = function(command) {
 // 0 <= encoded[i] <= 105
 // 0 <= first <= 105
 
-var decode = function(encoded, first) {
+var decode = function (encoded, first) {
     let array = [first];
-    
-    for(let i = 0; i < encoded.length + 1; i++) {
-        if(i === 0) {
+
+    for (let i = 0; i < encoded.length + 1; i++) {
+        if (i === 0) {
             array[i] = first;
         } else {
             array[i] = encoded[i - 1] ^ array[i - 1]
@@ -127,10 +127,10 @@ var decode = function(encoded, first) {
 // 0 <= nums[i] <= 100
 // 0 <= index[i] <= i
 
-var createTargetArray = function(nums, index) {
+var createTargetArray = function (nums, index) {
     let targetArray = [];
-    
-    for(let i = 0; i < index.length; i++) {
+
+    for (let i = 0; i < index.length; i++) {
         targetArray.splice(index[i], 0, nums[i])
     }
     return targetArray;
@@ -169,11 +169,11 @@ var createTargetArray = function(nums, index) {
 // carType is 1, 2, or 3
 // At most 1000 calls will be made to addCar
 
-var ParkingSystem = function(big, medium, small) {
+var ParkingSystem = function (big, medium, small) {
     this.count = [big, medium, small]
 };
 
-ParkingSystem.prototype.addCar = function(carType) {
+ParkingSystem.prototype.addCar = function (carType) {
     return this.count[carType] ? this.count[carType]-- : 0
 };
 
@@ -211,13 +211,13 @@ ParkingSystem.prototype.addCar = function(carType) {
 // s[i] is either 'L' or 'R'.
 // s is a balanced string.
 
-var balancedStringSplit = function(s) {
-    
+var balancedStringSplit = function (s) {
+
     let balance = 0;
     let answer = 0;
-    
-    for(let i = 0; i < s.length; i++) {
-        if(s[i] === "L") {
+
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === "L") {
             balance++
         } else {
             balance--
@@ -261,15 +261,15 @@ var balancedStringSplit = function(s) {
 // 0 <= start <= 1000
 // n == nums.length
 
-var xorOperation = function(n, start) {
+var xorOperation = function (n, start) {
     let nums = [];
     let result = 0;
-    
-    for(let i = 0; i < n; i++) {
-        nums[i] = start + 2*i
+
+    for (let i = 0; i < n; i++) {
+        nums[i] = start + 2 * i
         result = result ^ nums[i]
     }
-    
+
     return result
 };
 
@@ -295,16 +295,16 @@ var xorOperation = function(n, start) {
 // Output: 2
 // Explanation: There are only two items matching the given rule, which are ["phone","blue","pixel"] and ["phone","gold","iphone"]. Note that the item ["computer","silver","phone"] does not match.
 
-var countMatches = function(items, ruleKey, ruleValue) {
+var countMatches = function (items, ruleKey, ruleValue) {
     let count = 0
     const rule = {
         "type": 0,
         "color": 1,
         "name": 2
     }
-    
-    for(let i = 0; i < items.length; i++) {
-        if(items[i][rule[ruleKey]] === ruleValue) {
+
+    for (let i = 0; i < items.length; i++) {
+        if (items[i][rule[ruleKey]] === ruleValue) {
             count++
         }
     }
@@ -341,12 +341,31 @@ var countMatches = function(items, ruleKey, ruleValue) {
 // 1 <= nums.length <= 1000
 // -100 <= nums[i] <= 100
 
-var arraySign = function(nums) {
+var arraySign = function (nums) {
     const product = nums.reduce((acc, current) => acc * current)
-    
-    if(product) {
+
+    if (product) {
         return product > 0 ? 1 : -1
     } else {
         return 0
     }
 };
+
+// LeetCode 1832. Check if the Sentence Is Pangram
+
+// A pangram is a sentence where every letter of the English alphabet appears at least once.
+
+// Given a string sentence containing only lowercase English letters, return true if sentence is a pangram, or false otherwise.
+
+// Example 1:
+// Input: sentence = "thequickbrownfoxjumpsoverthelazydog"
+// Output: true
+// Explanation: sentence contains at least one of every letter of the English alphabet.
+
+// Example 2:
+// Input: sentence = "leetcode"
+// Output: false
+
+// Constraints:
+// 1 <= sentence.length <= 1000
+// sentence consists of lowercase English letters.
