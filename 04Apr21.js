@@ -429,3 +429,19 @@ var arrayStringsAreEqual = function(word1, word2) {
 // Example 3:
 // Input: "LOVELY"
 // Output: "lovely"
+
+var toLowerCase = function(str) {
+    let lowercase = ''
+    
+    for(let letter of str) {
+        
+        const ascii = letter.charCodeAt()
+        
+        if(ascii >= 65 && ascii <= 90) {
+            lowercase = lowercase + String.fromCharCode(ascii + 32)
+        } else {
+            lowercase = lowercase + letter
+        }
+    }
+    return lowercase
+};
