@@ -485,3 +485,16 @@ var toLowerCase = function(str) {
 // s consists of digits 0-9 and characters '+', '-', '*', '/', '(', and ')'.
 // It is guaranteed that parentheses expression s is a VPS.
 
+var maxDepth = function(s) {
+    let maxCount = 0
+    let count = 0;
+    
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === '(') {
+            maxCount = Math.max(maxCount, ++count);
+        } else if (s[i] === ')') {
+            count--;
+        }
+    }
+    return maxCount;
+};
