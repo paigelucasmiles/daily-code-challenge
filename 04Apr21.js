@@ -486,7 +486,7 @@ var toLowerCase = function(str) {
 // It is guaranteed that parentheses expression s is a VPS.
 
 var maxDepth = function(s) {
-    let maxCount = 0
+    let maxCount = 0;
     let count = 0;
     
     for (let i = 0; i < s.length; i++) {
