@@ -68,3 +68,7 @@ var findNumbers = function(nums) {
 // s consist of only lowercase and uppercase English letters and spaces.
 // The words in s are separated by a single space.
 // There are no leading or trailing spaces.
+
+var truncateSentence = function(s, k) {
+    return s.split(" ").slice(0, k).join(" ")
+};
