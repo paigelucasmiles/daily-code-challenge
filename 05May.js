@@ -102,3 +102,18 @@ var truncateSentence = function(s, k) {
 // n == image[i].length
 // 1 <= n <= 20
 // images[i][j] is either 0 or 1.
+
+var flipAndInvertImage = function(image) {
+    
+    for (let i = 0; i < image.length; i++) {
+        image[i] = image[i].reverse()
+        for(let j = 0; j < image[i].length; j++) {
+            if(image[i][j] === 0) {
+                image[i][j] = 1
+            } else {
+                image[i][j] = 0
+            }
+        }
+    }
+    return image;
+};
